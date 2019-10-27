@@ -4,21 +4,23 @@
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 [![Supported PHP Version](https://img.shields.io/packagist/php-v/php-imap/php-imap/3.0.8.svg)](README.md)
 
-Features
-    Connect to mailbox by IMAP, using PHP IMAP extension
-    Read emails with attachments and inline images
-    Get emails filtered or sorted by custom criteria
-    Mark emails as seen/unseen
+### Features
+    
+    * Connect to mailbox by IMAP, using PHP IMAP extension
+    * Read emails with attachments and inline images
+    * Get emails filtered or sorted by custom criteria
+    * Mark emails as seen/unseen
 
-Dependencies
-    PHP 5.6, 7.0, 7.1, 7.2 or 7.3
-    PHP imap extension must be present; so make sure this line is active in your php.ini: extension=php_imap.dll
-    Composer
-    PhpUnit
+### Dependencies
+    
+    * PHP 5.6, 7.0, 7.1, 7.2 or 7.3
+    * PHP imap extension must be present; so make sure this line is active in your php.ini: extension=php_imap.dll
+    * Composer
+    * PhpUnit
 
 ## About MailBox
 
-    To start using the project it is necessary to configure the file "config.json" according to the desired parameters, and suitable for the process to be done.
+To start using the project it is necessary to configure the file "config.json" according to the desired parameters, and suitable for the process to be done.
 
 ### Getting Started Example
             {
