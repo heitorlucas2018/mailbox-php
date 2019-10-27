@@ -1,0 +1,23 @@
+{
+    "data_mailbox": {
+        "host": "domain.com.br",
+        "protocol": "imap",
+        "socket": 143,
+        "user": "user@domain.com.br",
+        "password": "123456"
+    },
+    "search_filter": {
+        "criterion": ["FROM"],
+        "data": "admin@admin.com",
+    },
+    "storage": {
+        "name": "storage",
+        "path": "storage/"
+    },
+    "api":{
+        "url":"localhost.com.br",
+        "socket":"8080",
+        "token":"d9b628848260c8a765cdb9cd357988ff"
+    },
+    "listparam":["Nome","Endereço","Valor","Vencimento"]
+}
