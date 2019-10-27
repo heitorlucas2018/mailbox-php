@@ -56,9 +56,10 @@ Parameters Search:
    * TO "string" - match messages with "string" in the To:
 
  + Multiplos Data
+
         "search_filter": {
             "criterion": "FROM",
-            "data":{ 
+            "data":{
                        "remetente@domain.com",
                        "remetente2@domain.com"
                     }
