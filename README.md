@@ -59,10 +59,10 @@ Parameters Search:
 
         "search_filter": {
             "criterion": "FROM",
-            "data":{
+            "data":[
                        "remetente@domain.com",
                        "remetente2@domain.com"
-                    }
+                    ]
         },
 
 ## Folders Struct
