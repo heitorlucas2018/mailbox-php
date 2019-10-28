@@ -1,8 +1,14 @@
 
 # MailBox-PHP
 
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
-[![Supported PHP Version](https://img.shields.io/packagist/php-v/php-imap/php-imap/3.0.8.svg)](README.md)
+<p align="center">
+<a href="https://opensource.org/licenses/MIT">
+    <img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="PHP imap">
+</a>
+<a href="https://www.php.net/manual/pt_BR/book.imap.php">
+    <img src="https://img.shields.io/packagist/php-v/php-imap/php-imap/3.0.8.svg" alt="PHP imap">
+</a>
+</p>
 
 ### Features
     
@@ -47,15 +53,15 @@ To start using the project it is necessary to configure the file "config.json" a
                 "listparam": ["Nome", "Endereço", "Valor", "Vencimento"]
             }
 
-### Parameter search_filter
+#### search_filter
 
-Parameters Search:
++ Parameters Search:
    * BCC "string" - match messages with "string" in the Bcc: field
    * FROM "string" - match messages with "string" in the From: field
    * SUBJECT "string" - match messages with "string" in the Subject:
    * TO "string" - match messages with "string" in the To:
 
- + Multiplos Data
+  Multiplos Data
 
         "search_filter": {
             "criterion": "FROM",

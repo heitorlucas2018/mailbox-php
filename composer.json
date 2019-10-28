@@ -1,12 +1,12 @@
 {
     "autoload": {
         "psr-4": {
-            "App": "app/"
+            "App\\": "app/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "TDD/test/":"tests/"
+            "TDD\\test\\": "tests/"
         }
     },
     "require-dev": {
