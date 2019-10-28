@@ -27,26 +27,25 @@ class Mailbox extends Mail
           $this->setUser( $_ENV->data_mailbox->user );
           $this->setPassword( $_ENV->data_mailbox->password );
         }
-        $this->mailbox_open( );
-        $this->mailbox_search( $_ENV->search_filter->data,$_ENV->search_filter->criterion );
+        if( $this->mailbox_open( ) )
+            $this->mailbox_search( $_ENV->search_filter->data, $_ENV->search_filter->criterion );
     }
 
     public function __destruct( )
     {
-        imap_close( $this->stream );
+        return ! $this->stream ?: imap_close( $this->stream );
     }
 
     public function mailbox_open()
     {
-        $this->stream = imap_open( $this->getProtocolConnection( ),$this->getUser( ),$this->getPassword( ) ) 
-                                            or new Exception( "can't connect: " . imap_last_error( ) );
-       return true;
+        return $this->stream = imap_open( $this->getProtocolConnection( ),$this->getUser( ),$this->getPassword( ) )
+                        or new Exception("Unable to open mailbox, please check connection data in config.json file. {  }");
     }
 
     public function mailbox_search( $datasearch = '',$criterion = null )
     {
-        if( ! imap_ping( $this->stream ) ) return  print('Is not connected!!');
-
+        if( ! $this->stream ) return;
+        
         if( ! is_array( $datasearch ) )
         {   
             if( $criterion != null )
