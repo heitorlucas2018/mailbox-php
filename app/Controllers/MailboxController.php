@@ -8,10 +8,11 @@ class MailboxController extends Mailbox
 {
     public function __construct( $data = null)
     {
-        try {
+        try 
+        {
             parent::__construct($data);
-        } catch (\Throwable $th) {
-            throw $th->getMessage();
+        } catch (\Exception $e) {
+            print("ERROR: ".$e->getMessage() );
         }
 
     }

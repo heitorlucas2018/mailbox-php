@@ -5,8 +5,9 @@ namespace App\Model;
 class Api
 {
     private $stream;
-    private $socket = $_ENV->api->socket;
-    private $url    = $_ENV->api->ulr;
+    private $socket;
+    private $url;
+    private $token;
     private $header;
     private $body;
     private $request;
@@ -15,17 +16,16 @@ class Api
     {
         $this->url = $url;
     }
-    public function setHeader( $token = null )
+    public function setHeader( $header = null )
     {
-        $this->header = array(
-                                "Content-Type: application/json",
-                                "cache-control: no-cache",
-                                "token: $token"
-                            );
+        $this->header = $header;
     }
     public function setBody( $body )
     {
-        $this->body = json_encode($body);
+        if( is_array( $body ))
+            $this->body = json_encode($body);
+        else
+            $this->body = $body;
     }
     public function setRequest( $request )
     {
@@ -38,6 +38,14 @@ class Api
     public function setSocket( $socket )
     {
         $this->socket = $socket;
+    }
+    public function setToken( $token )
+    {
+        $this->token = $token;
+    }
+    public function getTokent()
+    {
+        return $this->token;
     }
     public function getSocket()
     {
@@ -53,7 +61,11 @@ class Api
     }
     public function getHeader()
     {
-        return $this->header;
+        return $this->header ?: array(
+                                        "Content-Type: application/json",
+                                        "cache-control: no-cache",
+                                        "token: ".$this->token.""
+                                    );
     }
     public function getBody()
     {

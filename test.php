@@ -57,7 +57,16 @@ require_once __DIR__.'/Config/App.php';
  */
 define( 'STORAGE', __DIR__ . DS . $_ENV->storage->path );
 
+/*
+|--------------------------------------------------------------------------
+| Register and Init CLASS teste api
+|--------------------------------------------------------------------------
+|
+| Description
+|
+*/
 
+require_once __DIR__.'/tests/api/api.php';
 
 
 

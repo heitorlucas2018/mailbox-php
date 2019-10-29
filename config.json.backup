@@ -15,7 +15,7 @@
         "path": "storage/"
     },
     "api":{
-        "url":"localhost.com.br",
+        "url":"/mailbox-php/api/teste",
         "socket":"8080",
         "token":"d9b628848260c8a765cdb9cd357988ff"
     },

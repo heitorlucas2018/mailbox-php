@@ -7,17 +7,18 @@ use Exception;
 
 class ApiController extends Api
 {
-
     public function __construct( $data = [], $toconnect = true )
     {
-        $this->setHeader($data->token);
+        $this->setSocket($ENV->api->socket);
+        $this->setURL($ENV->api->ulr);
+        $this->setToken($ENV->api->token);
         $this->setbody($data->body);
         return $toconnect ? $this->Conection() : null;
     }
     
     public function __destruct()
     {
-        curl_close($this->getStream());
+        // curl_close($this->getStream());
     }
 
     public function Conection()
@@ -25,7 +26,7 @@ class ApiController extends Api
         try {
             $stream = curl_init();
             $this->setStream( $stream );
-            curl_setopt_array($this->getStream(),
+            curl_setopt_array($stream,
                             array(
                                 CURLOPT_PORT => $this->getSocket(),
                                 CURLOPT_URL => $this->getURL(),

@@ -38,8 +38,10 @@ class Mailbox extends Mail
 
     public function mailbox_open()
     {
-        return $this->stream = imap_open( $this->getProtocolConnection( ),$this->getUser( ),$this->getPassword( ) )
-                        or new Exception("Unable to open mailbox, please check connection data in config.json file. {  }");
+        if( !$stream = imap_open( $this->getProtocolConnection( ),$this->getUser( ),$this->getPassword( ) ) )
+                throw new Exception("Unable to open mailbox, please check connection data in config.json file. { ".__CLASS__.DS.__FUNCTION__." }");
+        else
+           return $this->stream = $stream;
     }
 
     public function mailbox_search( $datasearch = '',$criterion = null )
