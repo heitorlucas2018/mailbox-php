@@ -2,9 +2,11 @@
 
 namespace App\Model;
 
+use Exception;
+
 class Api
 {
-    private $stream;
+    private $resource;
     private $socket;
     private $url;
     private $token;
@@ -22,6 +24,8 @@ class Api
     }
     public function setBody( $body )
     {
+        if( $body == null) throw new Exception("Request Body is null;");
+        
         if( is_array( $body ))
             $this->body = json_encode($body);
         else
@@ -31,9 +35,9 @@ class Api
     {
         $this->request = $request;
     }
-    public function setStream( $stream )
+    public function setResource( $resource )
     {
-        $this->request = $stream;
+        $this->resource = $resource;
     }
     public function setSocket( $socket )
     {
@@ -43,6 +47,7 @@ class Api
     {
         $this->token = $token;
     }
+
     public function getTokent()
     {
         return $this->token;
@@ -51,9 +56,9 @@ class Api
     {
         return $this->socket;
     }
-    public function getStream()
+    public function getResource()
     {
-        return $this->stream;
+        return $this->resource;
     }
     public function getURL()
     {
@@ -61,10 +66,9 @@ class Api
     }
     public function getHeader()
     {
-        return $this->header ?: array(
-                                        "Content-Type: application/json",
-                                        "cache-control: no-cache",
-                                        "token: ".$this->token.""
+            return array( "Content-Type: application/json",
+                          "cache-control: no-cache",
+                          "token: ".$this->token.""
                                     );
     }
     public function getBody()

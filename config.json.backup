@@ -16,7 +16,7 @@
     },
     "api":{
         "url":"/mailbox-php/api/teste",
-        "socket":"8080",
+        "socket":"80",
         "token":"d9b628848260c8a765cdb9cd357988ff"
     },
     "listparam":["Nome","Endereço","Valor","Vencimento"]

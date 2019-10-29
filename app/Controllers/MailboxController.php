@@ -12,7 +12,7 @@ class MailboxController extends Mailbox
         {
             parent::__construct($data);
         } catch (\Exception $e) {
-            print("ERROR: ".$e->getMessage() );
+            printf("ERROR: ".$e->getMessage() );
         }
 
     }

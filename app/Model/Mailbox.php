@@ -33,7 +33,7 @@ class Mailbox extends Mail
 
     public function __destruct( )
     {
-        return ! $this->stream ?: imap_close( $this->stream );
+       imap_close( $this->stream );
     }
 
     public function mailbox_open()
@@ -54,7 +54,7 @@ class Mailbox extends Mail
                 $criterion = "$criterion \"$datasearch\" ";
 
             $array_num = imap_search( $this->stream, "$criterion UNSEEN ", SE_FREE, 'UTF-8' );
-            if( ! $array_num ) return print( 'No data Foond!!' );
+            if( ! $array_num ) return printf( 'No data Foond!!' );
 
               foreach ( $array_num as $key => $msg_number )
                 $this->setmailbox_list( $msg_number );
