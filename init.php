@@ -14,5 +14,5 @@ try {
     $api->Conection();
    
 } catch (\Throwable $th) {
-    print($th->getMessage());
+    printf($th->getMessage());
 }

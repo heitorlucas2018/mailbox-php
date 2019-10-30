@@ -24,10 +24,13 @@ class Api
     }
     public function setBody( $body )
     {
-        if( $body == null) throw new Exception("Request Body is null;");
+        if( $body == null or count($body) ) throw new Exception("Request Body is null; { ".__FUNCTION__." }");
         
-        if( is_array( $body ))
+        if( is_array( $body ) or is_object( $body ))
+        {
+            print('is array =>'.json_encode($body));
             $this->body = json_encode($body);
+        }
         else
             $this->body = $body;
     }

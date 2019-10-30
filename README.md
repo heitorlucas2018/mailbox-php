@@ -101,8 +101,8 @@ To start using the project it is necessary to configure the file "config.json" a
     │   │       └── __construct
     │   └── Models: Models
     │       |── Api
-    |       │   |── setStream
-    |       │   |── getStream
+    |       │   |── setResource
+    |       │   |── getResource
     |       │   ├── setSocket
     |       │   ├── getSocket
     |       │   ├── setURL
