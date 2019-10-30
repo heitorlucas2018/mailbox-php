@@ -139,7 +139,7 @@ To start using the project it is necessary to configure the file "config.json" a
     |           ├── setMailbox_list
     |           ├── readBody
     |           └── mailbox_anexo
-    └── config: 
+    └── config:
         |── Autoload
         │   └── __Autoload
         └── App
