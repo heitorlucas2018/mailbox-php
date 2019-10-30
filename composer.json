@@ -6,7 +6,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "TDD\\test\\": "tests/"
+            "TDD\\tests\\": "tests/"
         }
     },
     "require-dev": {
