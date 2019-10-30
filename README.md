@@ -92,25 +92,25 @@ To start using the project it is necessary to configure the file "config.json" a
 ## Files and Methods Struct
 
     ├── App: 
-    │   ├── Controllers: Controllers
+    │   ├── Controllers: 
     │   │   |── ApiController
     │   │   |   |── __construct
     │   │   |   |── __destruct
-    │   │   |   └── Conection
+    │   │   |   └── Conection :@return  resource | bool
     |   |   └── MailboxController
     │   │       └── __construct
-    │   └── Models: Models
+    │   └── Models: 
     │       |── Api
     |       │   |── setResource
-    |       │   |── getResource
+    |       │   |── getResource :@return resource
     |       │   ├── setSocket
-    |       │   ├── getSocket
+    |       │   ├── getSocket :@return string
     |       │   ├── setURL
-    |       │   ├── getURL
+    |       │   ├── getURL :@return string
     |       │   ├── setBody
-    |       │   ├── getBody
+    |       │   ├── getBody :@return string
     |       │   ├── setRequest
-    |       │   └── getRequest
+    |       │   └── getRequest :@return resource
     │       ├── File
     |       │   ├── __construct
     |       │   ├── createFile
@@ -139,7 +139,7 @@ To start using the project it is necessary to configure the file "config.json" a
     |           ├── setMailbox_list
     |           ├── readBody
     |           └── mailbox_anexo
-    └── config: funções genéricas
+    └── config: 
         |── Autoload
         │   └── __Autoload
         └── App

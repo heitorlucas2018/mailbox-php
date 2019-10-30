@@ -14,6 +14,5 @@ class MailboxController extends Mailbox
         } catch (\Exception $e) {
             printf("ERROR: ".$e->getMessage() );
         }
-
     }
 }

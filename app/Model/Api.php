@@ -28,7 +28,6 @@ class Api
         
         if( is_array( $body ) or is_object( $body ))
         {
-            print('is array =>'.json_encode($body));
             $this->body = json_encode($body);
         }
         else
@@ -69,10 +68,10 @@ class Api
     }
     public function getHeader()
     {
-            return array( "Content-Type: application/json",
-                          "cache-control: no-cache",
-                          "token: ".$this->token.""
-                                    );
+        return $this->header ?: array( "Content-Type: application/json",
+                                        "cache-control: no-cache",
+                                        "token: ".$this->token.""
+                                        );
     }
     public function getBody()
     {

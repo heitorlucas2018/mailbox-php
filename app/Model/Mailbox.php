@@ -90,7 +90,7 @@ class Mailbox extends Mail
             $this->mailbox_anexo( $from, $filedata, $handle );
         }
 
-        array_push( $this->mailboxlist,['from'=>$from, 'body'=> $this->readBody( $body )] );
+        array_push( $this->mailboxlist,['Name'=>$from, 'Data'=> $this->readBody( $body )] );
     }
 
     public function readBody( $data ){

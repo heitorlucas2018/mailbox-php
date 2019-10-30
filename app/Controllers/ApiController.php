@@ -7,7 +7,7 @@ use Exception;
 
 class ApiController extends Api
 {
-    public function __construct( $data = null )
+    public function __construct( $data = [] )
     {
         $this->setSocket($_ENV->api->socket);
         $this->setURL($_ENV->api->url);
