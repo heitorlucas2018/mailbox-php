@@ -61,7 +61,7 @@ To start using the project it is necessary to configure the file "config.json" a
    * SUBJECT "string" - match messages with "string" in the Subject:
    * TO "string" - match messages with "string" in the To:
 
-  Multiplos Data
+  Multiples Data
 
         "search_filter": {
             "criterion": "FROM",
